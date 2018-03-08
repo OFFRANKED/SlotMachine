@@ -1,5 +1,6 @@
 package assignment.slotmachine;
 
+import android.graphics.Paint;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +9,11 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.graphics.Canvas;
+
+import org.w3c.dom.Text;
 
 import java.util.Random;
 
@@ -17,7 +22,10 @@ public class Game extends AppCompatActivity {
     Button b_push;
     ImageView Slot1, Slot2, Slot3;
     Random r;
-    int slot1, slot2, slot3;
+    int slot1, slot2, slot3 ;
+    int score , lose;
+    Paint paint;
+    TextView text , text2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +37,8 @@ public class Game extends AppCompatActivity {
         Slot1 = (ImageView) findViewById(R.id.Slot1);
         Slot2 = (ImageView) findViewById(R.id.Slot2);
         Slot3 = (ImageView) findViewById(R.id.Slot3);
+        text= (TextView) findViewById(R.id.Numb);
+        text2 = (TextView) findViewById(R.id.Numb2);
 
         b_push.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +71,10 @@ public class Game extends AppCompatActivity {
                 },500);
             }
         });
+
+
     }
+
 
     public void setImages()
     {
@@ -134,11 +147,22 @@ public class Game extends AppCompatActivity {
         if ((slot1==slot2) && (slot2==slot3))
         {
             Toast.makeText(this,"Jackpot",Toast.LENGTH_LONG).show();
+            score+=10;
+            //text.getText();
+            text.setText(" "+score);
+
         }
         //2 Same Image
-        if ((slot1==slot2) || (slot2==slot3) ||(slot1==slot3))
+        else if ((slot1==slot2) || (slot2==slot3) ||(slot1==slot3))
         {
             Toast.makeText(this,"Hit",Toast.LENGTH_LONG).show();
+            score+=5;
+            text.setText(" " +score);
+
+        }
+        else {
+            lose++;
+            text2.setText("" + lose);
         }
 
     }
