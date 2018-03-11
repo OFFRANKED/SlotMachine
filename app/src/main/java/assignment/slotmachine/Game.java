@@ -1,3 +1,7 @@
+//Author(s): Jatin Kumar Student ID: 101035696, Macdonald Maunder Student ID: 101060770,
+//Created On: Feb 24, 2018
+//Description: This is the main Game Activity java file with all the requested Functions and there Functionality.
+//Git Hub: https://github.com/OFFRANKED/SlotMachine.git
 package assignment.slotmachine;
 
 import android.graphics.drawable.AnimationDrawable;
@@ -13,6 +17,7 @@ import java.util.Random;
 
 public class Game extends AppCompatActivity {
 
+    //Variables Name declare :
     Button B_bet2, B_bet4, B_bet8, B_reset, B_quit;
     ImageView I_Slot1, I_Slot2, I_Slot3;
     Random r;
@@ -20,6 +25,7 @@ public class Game extends AppCompatActivity {
     int Money = 50;
     int Lose, Bet;
     TextView T_Money, T_Lose;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -247,7 +253,7 @@ public class Game extends AppCompatActivity {
         if ((slot1==slot2) && (slot2==slot3))
         {
             Toast.makeText(this,"Jackpot",Toast.LENGTH_LONG).show();
-            Money +=(Bet + Bet);
+            Money +=(3*Bet);
             //T_Money.getText();
             T_Money.setText("$ "+ Money);
 
@@ -257,7 +263,7 @@ public class Game extends AppCompatActivity {
         {
             Toast.makeText(this,"Hit",Toast.LENGTH_LONG).show();
             T_Money.getText();
-            Money +=(Bet);
+            Money +=(Bet+ Bet);
             T_Money.setText("$ " + Money);
 
         }

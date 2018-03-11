@@ -1,3 +1,7 @@
+//Author(s): Jatin Kumar Student ID: 101035696, Macdonald Maunder Student ID: 101060770,
+//Created On: Feb 24, 2018
+//Description: This is the main MainMenu java file with all the requested Functions and there Functionality.
+//Git Hub: https://github.com/OFFRANKED/SlotMachine.git
 package assignment.slotmachine;
 
 import android.support.v7.app.AppCompatActivity;
@@ -17,68 +21,31 @@ public class MainMenu extends AppCompatActivity {
         Context context = getApplicationContext();
         Toast.makeText(context, "onCreate completed", Toast.LENGTH_LONG).show();
 
+        //Play Button
         Button playButtonVariable = (Button) findViewById(R.id.Play);
         PlayButtonListener playListenerVariable = new PlayButtonListener();
         playButtonVariable.setOnClickListener(playListenerVariable);
 
+        //Quit Button
         Button quit = (Button) findViewById(R.id.Quit);
-        ButtonListener quitListener = new ButtonListener();
+        QuitButtonListener quitListener = new QuitButtonListener();
         quit.setOnClickListener(quitListener);
     }
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Context context = getApplicationContext();
-        Toast.makeText(context, "onStart completed", Toast.LENGTH_LONG).show();
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Context context = getApplicationContext();
-        Toast.makeText(context, "onResume completed", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Context context = getApplicationContext();
-        Toast.makeText(context, "onPause completed", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Context context = getApplicationContext();
-        Toast.makeText(context, "onStop completed", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Context context = getApplicationContext();
-        Toast.makeText(context, "onDestroy completed", Toast.LENGTH_LONG).show();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Context context = getApplicationContext();
-        Toast.makeText(context, "onRestart completed", Toast.LENGTH_LONG).show();
-    }
-
-    private class ButtonListener implements View.OnClickListener {
+    //Quit Listener
+    private class QuitButtonListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
             finish();
         }
     }
 
+    //Start Play function
     private void startPlay() {
         Intent intentInstance = new Intent(this, Game.class);
         startActivity(intentInstance);
     }
-
+    //Play Listener
     private class PlayButtonListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
