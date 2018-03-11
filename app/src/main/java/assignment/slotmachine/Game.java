@@ -1,4 +1,4 @@
-//Author(s): Jatin Kumar Student ID: 101035696, Macdonald Maunder Student ID: 101060770,
+//Author(s): Jatin Kumar Student ID: 101035696, Macdonald Maunder Student ID: 101060770, Aljon Ramos Student ID: 101050991
 //Created On: Feb 24, 2018
 //Description: This is the main Game Activity java file with all the requested Functions and there Functionality.
 //Git Hub: https://github.com/OFFRANKED/SlotMachine.git
